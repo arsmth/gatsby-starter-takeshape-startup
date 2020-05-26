@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 import { Helmet } from 'react-helmet';
 
-import { tsImageUrl } from 'lib/takeshape';
+import { tsImageUrl, fluidImage } from 'lib/takeshape';
 import { friendlyDate } from 'lib/datetime';
 import routes from 'lib/routes';
 
@@ -47,7 +48,8 @@ const IndexPage = ({ data = {} }) => {
           </div>
 
           <div>
-            <img src={ tsImageUrl(page.introduction.image)  } alt="intro" />
+            {/* <img src={ tsImageUrl(page.introduction.image)  } alt="intro" /> */}
+            <Img fluid={fluidImage(page.introduction.image)} />
           </div>
         </div>
       </div>
